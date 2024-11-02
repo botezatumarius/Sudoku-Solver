@@ -3,6 +3,7 @@ from ConstraintPropagationSolver import ConstraintPropagationSolver
 from CombinedSolver import CombinedSolver
 from ConstraintPropagationWithMRVSolver import ConstraintPropagationWithMRVSolver
 from SudokuGenerator import SudokuGenerator
+from AC3Solver import AC3Solver
 
 
 puzzle = [
@@ -27,7 +28,7 @@ for row in solvable_grid:
     print(row)
 
 
-solver2 = ConstraintPropagationWithMRVSolver(solvable_grid)
+solver2 = AC3Solver(solvable_grid)
 if solver2.solve():
     for row in solvable_grid:
         print("".join(str(num) for num in row))
